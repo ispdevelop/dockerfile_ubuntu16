@@ -7,15 +7,15 @@ COPY .zshrc /root/
 
 RUN apt-get -y update \
 	&& apt-get -y install build-essential \
-	&& apt-get -y install zsh ant libjpeg-dev git vim language-pack-ja-base language-pack-ja ibus-mozc wget valgrind \
+	&& apt-get -y install zsh ant libjpeg-dev git vim language-pack-ja-base language-pack-ja ibus-mozc wget valgrind maven \
 	&& apt -y install openjdk-8-jdk \
 	&& apt-get  -y clean \
 	&& ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/java \
 	# go言語環境取得
  	&& mkdir /root/tmp \
 	&& cd /root/tmp \
- 	&& wget https://redirector.gvt1.com/edgedl/go/go1.12.5.linux-amd64.tar.gz \
- 	&& tar -C /usr/local -xzf go1.12.5.linux-amd64.tar.gz \
+ 	&& wget https://redirector.gvt1.com/edgedl/go/go1.15.6.linux-amd64.tar.gz \
+ 	&& tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz \
  	&& cd /root \
  	&& mkdir gohome \
  	&& bash \
