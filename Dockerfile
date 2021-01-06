@@ -7,10 +7,17 @@ COPY .zshrc /root/
 
 RUN apt-get -y update \
 	&& apt-get -y install build-essential \
-	&& apt-get -y install zsh ant libjpeg-dev git vim language-pack-ja-base language-pack-ja ibus-mozc wget valgrind maven \
+	&& apt-get -y install zsh ant libjpeg-dev vim language-pack-ja-base language-pack-ja ibus-mozc wget valgrind maven \
 	&& apt -y install openjdk-8-jdk \
 	&& apt-get  -y clean \
 	&& ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/java \
+	# git環境取得
+ 	&& wget https://github.com/git/git/archive/v2.30.0.tar.gz \
+ 	&& tar -zxvf v2.30.0.tar.gz \
+ 	&& cd git-2.30.0 \
+ 	&& make prefix=/usr/local all \
+ 	&& make prefix=/usr/local install \
+ 	&& make clean \
 	# gcc101
  	&& mkdir /root/tmp \
 	&& cd /root/tmp \
