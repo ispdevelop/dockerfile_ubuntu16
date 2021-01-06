@@ -7,7 +7,7 @@ COPY .zshrc /root/
 
 RUN apt-get -y update \
 	&& apt-get -y install build-essential \
-	&& apt-get -y install zsh ant libjpeg-dev vim language-pack-ja-base language-pack-ja ibus-mozc wget valgrind maven \
+	&& apt-get -y install git zsh ant libjpeg-dev vim language-pack-ja-base language-pack-ja ibus-mozc wget valgrind maven \
 	&& apt -y install openjdk-8-jdk \
 	&& apt-get  -y clean \
 	&& ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/java \
