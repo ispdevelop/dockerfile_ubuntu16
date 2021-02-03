@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 
 # home配下にコピー
-COPY .bashrc /root/
 COPY .netrc /root/
 COPY .zshrc /root/
 
